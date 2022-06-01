@@ -1,0 +1,4 @@
+for beta = 0.2 and m = 0.01
+<vz^2> =
+Monte Carlo Approximation: 503.141
+Theory: 500
