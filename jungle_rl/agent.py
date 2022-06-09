@@ -175,6 +175,17 @@ class IMAgent(DqnAgent):
 
         return traj
 
+    def act_eval(self, policy):
+        time_step = self._current_time_step()
+
+        policy_step = policy.action(
+            time_step, policy_state=self._policy_state)
+
+        self._policy_state = policy_step.state
+        next_time_step = self._step_environment(policy_step.action)
+
+        return next_time_step
+
     def train_iteration(self) -> LossInfo:
         experience, info = self._replay_buffer.get_next(
             sample_batch_size=self._training_batch_size,
