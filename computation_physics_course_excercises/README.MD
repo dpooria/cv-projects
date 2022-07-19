@@ -1,1 +1,1 @@
-# Advanced Computation Physics
+### Advanced Computational Physics Graduate Course
